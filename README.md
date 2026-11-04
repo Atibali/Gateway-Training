@@ -10,7 +10,8 @@ Week1/
     Lessons/        # Lesson code
   Day2/
     README.md       # Day 2 instructions and run commands
-    *.cs            # Exception-handling programs
+    *.cs            # Exception, date/time, and related C# examples
+    Sql/            # SQL practice scripts and sample database
 ```
 
 ## Find a week and day's work
@@ -18,7 +19,7 @@ Week1/
 | Week | Day | Tasks and code |
 |---|---|---|
 | [Week 1](Week1/) | [Day 1](Week1/Day1/) | [Day 1 README](Week1/Day1/README.md) · [Lesson code](Week1/Day1/Lessons/) |
-| [Week 1](Week1/) | [Day 2](Week1/Day2/) | [Day 2 README](Week1/Day2/README.md) · Exception-handling programs |
+| [Week 1](Week1/) | [Day 2](Week1/Day2/) | [Day 2 README](Week1/Day2/README.md) · Exception, date/time, and SQL examples |
 
 New training days follow the same `WeekN/DayN/` layout. Check that day's README for its tasks and instructions.
 
