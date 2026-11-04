@@ -2,7 +2,7 @@ using System;
 
 class MultipleCatchBlocks
 {
-    static void Maain()
+    static void Main()
     {
         try
         {

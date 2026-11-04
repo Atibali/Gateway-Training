@@ -9,7 +9,7 @@ class InsufficientBalanceException : Exception
 
 class CustomException
 {
-    static void Maain()
+    static void Main()
     {
         try
         {

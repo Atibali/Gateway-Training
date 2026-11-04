@@ -2,7 +2,7 @@ using System;
 
 class ThrowingExceptions
 {
-    static void Maain()
+    static void Main()
     {
         try
         {

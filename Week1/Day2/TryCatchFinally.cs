@@ -2,7 +2,7 @@ using System;
 
 class TryCatchFinally
 {
-    static void Maain()
+    static void Main()
     {
         try
         {
