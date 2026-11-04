@@ -22,27 +22,6 @@ Week1/
 
 New training days follow the same `WeekN/DayN/` layout. Check that day's README for its tasks and instructions.
 
-## Run a lesson
-
-From the Day 1 folder, run the app with the .NET 10 SDK:
-
-```sh
-cd Week1/Day1
-dotnet run -- Methods
-```
-
-Replace `Methods` with a lesson name such as `HelloWorld`, `Strings`, or `Collections`. See the [Day 1 README](Week1/Day1/README.md) for all available lessons.
-
-## Run a Day 2 program
-
-From the repository root, run one of the standalone programs with the .NET 10 SDK:
-
-```sh
-dotnet run --file Week1/Day2/TryCatchFinally.cs
-```
-
-See the [Day 2 README](Week1/Day2/README.md) for the other programs and topics.
-
 ## Small code example
 
 The [HelloWorld lesson](Week1/Day1/Lessons/HelloWorld.cs) prints a greeting:
