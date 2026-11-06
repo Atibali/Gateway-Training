@@ -1,8 +1,8 @@
 # Day 4: Programming for Testers
 
-This day contains a C# login-page practice program with tests for valid and invalid login scenarios. It requires the .NET 10 SDK.
+Day 4 focuses on writing and checking login-page test scenarios in C#. The project includes a simple login model and a set of validation tests for valid and invalid login flows. It requires the .NET 10 SDK.
 
-## Run the practice program
+## Run the practice project
 
 From the repository root, run:
 
@@ -10,7 +10,20 @@ From the repository root, run:
 dotnet run --project Week1/Day4/ProgrammingForTesters/ProgrammingForTesters.csproj
 ```
 
-The program checks valid login, invalid email, empty email, empty password, and invalid password.
+This runs the sample tests in `Program.cs` and prints PASS/FAIL results for:
+
+- valid login
+- invalid email
+- empty email
+- empty password
+- invalid password
+
+## Project files
+
+- `ProgrammingForTesters/Program.cs` runs the test scenarios
+- `ProgrammingForTesters/LoginPage.cs` contains the login validation logic
+- `ProgrammingForTesters/LoginTests.cs` defines the test cases
+- `GitPractice.md` contains the Git command practice transcript for testers
 
 ## Git practice for testers
 
