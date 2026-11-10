@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        
+        <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required minlength="2" maxlength="50" autocomplete="name" placeholder="Enter Name...">
+        </div>
+
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+
+        <div class="field">
+            <label for="pw">Password</label>
+            <input type="password" id="pw" name="password" required minlength="8" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="At least 8 characters, including 1 number and 1 lowercase letter">
+        </div>
+
+        <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="16" max="110" step="1">
+        </div>
+
+        <div class="field">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" max="2026-11-10">
+        </div>
+
+        <fieldset>
+            <legend>Preferred Contact Method</legend>
+            <label>
+                <input type="radio" name="contact" value="email" checked> Email
+            </label>
+            <label>
+                <input type="radio" name="contact" value="phone"> Phone
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Interests</legend>
+            <label><input type="checkbox" name="interests" value="html"> HTML</label>
+            <label><input type="checkbox" name="interests" value="css"> CSS</label>
+            <label><input type="checkbox" name="interests" value="js"> JS</label>
+        </fieldset>
+
+        <div class="field">
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+                <option value="">-- Choose --</option>
+
+                <optgroup label="Europe">
+                    <option value="de">Germany</option>
+                    <option value="fr">France</option>
+                </optgroup>
+
+                <optgroup label="Asia">
+                    <option value="in">India</option>
+                    <option value="jp">Japan</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" rows="5" maxlength="500"></textarea>
+        </div>
+
+        <div class="field">
+            <label for="avatar">Profile Pic</label>
+            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+        </div>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button" onclick="alert('Clicked!')">Just a Button</button>
+    </form>
+</body>
+</html>
