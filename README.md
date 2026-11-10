@@ -14,3 +14,4 @@
 | Week | Day | Tasks and code |
 |---|---|---|
 | [Week 2](Week2/) | [Day 1](Week2/Day1/) | [Day 1 README](Week2/Day1/README.md) · Browser developer tools, HTTP/API requests, and JSON |
+| [Week 2](Week2/) | [Day 2](Week2/Day2/) | [Day 2 README](Week2/Day2/README.md) · HTML structure, forms, CSS layouts, responsive design, and accessibility |
