@@ -1,0 +1,370 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics Demo</title>
+
+    <style>
+        /* =================================
+           1. UNIVERSAL SELECTOR & BOX MODEL
+        ================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* =================================
+           2. COLORS & CSS VARIABLES
+        ================================= */
+
+        :root {
+            --brand: #2563eb;
+            --brand-dark: #1e40af;
+            --text: hsl(220 15% 15%);
+            --bg: #f8fafc;
+            --card-bg: white;
+        }
+
+        /* =================================
+           3. FONTS & UNITS
+        ================================= */
+
+        body {
+            font-family: system-ui, sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            letter-spacing: -0.02em;
+        }
+
+        /* Type selector */
+        p {
+            line-height: 1.6;
+        }
+
+        /* Class selector */
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 1px solid #ddd;
+            border-radius: 0.75rem;
+        }
+
+        /* ID selector (use sparingly for styling) */
+        #hero {
+            background: var(--brand);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        /* =================================
+           4. DESCENDANT & CHILD SELECTORS
+        ================================= */
+
+        /* All paragraphs inside card */
+        .card p {
+            margin: 0;
+        }
+
+        /* Direct li children of ul */
+        ul > li {
+            display: inline-block;
+            padding: 0.5rem;
+        }
+
+        /* =================================
+           5. SIBLING SELECTORS
+        ================================= */
+
+        /* First paragraph immediately after h2 */
+        h2 + p {
+            color: var(--brand);
+            font-weight: bold;
+        }
+
+        /* All paragraphs after h2 */
+        h2 ~ p {
+            text-decoration: underline;
+            text-decoration-color: #93c5fd;
+        }
+
+        /* =================================
+           6. ATTRIBUTE SELECTORS
+        ================================= */
+
+        input[type="email"] {
+            border: 2px solid var(--brand);
+            padding: 0.6rem;
+            border-radius: 0.4rem;
+        }
+
+        a[href^="https"]::after {
+            content: " ↗";
+        }
+
+        /* =================================
+           7. PSEUDO-CLASSES
+        ================================= */
+
+        a:hover,
+        a:focus {
+            color: var(--brand-dark);
+            text-decoration: underline;
+        }
+
+        li:nth-child(odd) {
+            background: #dbeafe;
+        }
+
+        button:hover {
+            background: var(--brand-dark);
+        }
+
+        /* =================================
+           8. PSEUDO-ELEMENTS
+        ================================= */
+
+        p::first-line {
+            font-weight: bold;
+        }
+
+        .card::before {
+            content: "CSS CARD";
+            display: block;
+            color: var(--brand);
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* =================================
+           9. :is() AND :where()
+        ================================= */
+
+        :is(h1, h2, h3) {
+            font-family: Georgia, serif;
+        }
+
+        :where(.card, .panel) {
+            border-radius: 0.75rem;
+        }
+
+        /* =================================
+           10. SPECIFICITY DEMONSTRATION
+        ================================= */
+
+        /* Specificity: (0,1,1) */
+        .card p {
+            color: red;
+        }
+
+        /* Specificity: (1,0,1)
+           ID selector wins even though
+           this rule appears earlier. */
+        #main p {
+            color: blue;
+        }
+
+        /* =================================
+           11. BOX MODEL DEMONSTRATION
+        ================================= */
+
+        .box {
+            width: 200px;
+            padding: 20px;
+            border: 2px solid var(--brand);
+            margin: 10px;
+            background: #dbeafe;
+        }
+
+        /* =================================
+           12. COLORS & DIFFERENT UNITS
+        ================================= */
+
+        .hex {
+            color: #2563eb;
+        }
+
+        .rgb {
+            color: rgb(37 99 235);
+        }
+
+        .hsl {
+            color: hsl(221 83% 53%);
+        }
+
+        .alpha {
+            color: rgb(37 99 235 / 50%);
+        }
+
+        .px {
+            font-size: 16px;
+        }
+
+        .rem {
+            font-size: 1.2rem;
+        }
+
+        .em {
+            font-size: 1.2em;
+        }
+
+        .percentage {
+            width: 50%;
+            background: #bfdbfe;
+        }
+
+        .viewport {
+            width: 50vw;
+            background: #dbeafe;
+            padding: 0.5rem;
+        }
+
+        .ch {
+            max-width: 40ch;
+        }
+
+        button {
+            background: var(--brand);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        input {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <header id="hero">
+        <h1>CSS Basics Demo</h1>
+        <p>Learn CSS selectors, specificity, box model, colors and fonts.</p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+            Learn CSS
+        </a>
+    </header>
+
+    <main id="main">
+
+        <!-- SELECTORS -->
+        <section class="card">
+            <h2>1. CSS Selectors</h2>
+
+            <p>This paragraph demonstrates the adjacent sibling selector.</p>
+            <p>This paragraph demonstrates the general sibling selector.</p>
+
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+
+        <!-- SPECIFICITY -->
+        <section class="card">
+            <h2>2. Specificity</h2>
+
+            <p>
+                This text is BLUE because #main p has higher
+                specificity than .card p.
+            </p>
+
+            <p>
+                ID selectors have higher specificity than classes.
+            </p>
+        </section>
+
+        <!-- BOX MODEL -->
+        <section class="card">
+            <h2>3. Box Model</h2>
+
+            <div class="box">
+                Content: 200px
+                <br>
+                Padding: 20px
+                <br>
+                Border: 2px
+            </div>
+
+            <p>
+                Because of border-box, the total width is 200px,
+                excluding the external margin.
+            </p>
+        </section>
+
+        <!-- COLORS -->
+        <section class="card">
+            <h2>4. Colors</h2>
+
+            <p class="hex">HEX: #2563eb</p>
+            <p class="rgb">RGB: rgb(37 99 235)</p>
+            <p class="hsl">HSL: hsl(221 83% 53%)</p>
+            <p class="alpha">RGB with 50% opacity</p>
+        </section>
+
+        <!-- UNITS -->
+        <section class="card">
+            <h2>5. CSS Units</h2>
+
+            <p class="px">16px - Fixed font size</p>
+            <p class="rem">1.2rem - Root relative</p>
+            <p class="em">1.2em - Parent relative</p>
+
+            <p>50% width:</p>
+            <div class="percentage">50% of parent</div>
+
+            <p>50vw width:</p>
+            <div class="viewport">50vw</div>
+
+            <p class="ch">
+                40ch maximum width - useful for readable text.
+                This paragraph demonstrates character-based sizing.
+            </p>
+        </section>
+
+        <!-- FONTS -->
+        <section class="card">
+            <h2>6. Typography</h2>
+
+            <h1>Fluid Typography</h1>
+
+            <p>
+                The heading uses clamp() to adjust its font size
+                according to the viewport width.
+            </p>
+
+            <button>Hover Over Me</button>
+        </section>
+
+        <!-- ATTRIBUTE SELECTOR -->
+        <section class="card">
+            <h2>7. Attribute Selector</h2>
+
+            <input type="email" placeholder="Enter your email">
+        </section>
+
+    </main>
+
+</body>
+</html>
