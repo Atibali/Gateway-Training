@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <!-- Explicit Label best practice -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <!-- Implicit label also called wrapping -->
+        <label>
+            Email:
+            <input type="email" name="email">
+        </label>
+
+        <!-- Aria-label when no visible label is present -->
+        <input type="text" aria-label="Phone Number">
+        
+        <!-- Placeholder only — fails accessibility -->
+        <input type="text" placeholder="Address">
+    </body>
+</html>

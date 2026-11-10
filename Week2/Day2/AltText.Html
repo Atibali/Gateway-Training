@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessibility Basics: Alt Text Demonstration</title>
+  </head>
+  <body>
+    <header>
+      <h1>Company Dashboard</h1>
+      <a href="/settings" title="Go to Settings">
+        <img
+          src="https://placeholder.com⚙"
+          alt="Settings"
+          width="32"
+          height="32"
+        />
+      </a>
+    </header>
+    <main>
+        <section>
+            <h2>Quarterly Sales Report</h2>
+            <p>Our revenue showed strong growth during the second quarter.</p>
+            <img
+                src="https://placeholder.com/sales-chart"
+                alt="Line chart showing quarterly sales growth from Q1 to Q2"
+                width="600"
+                height="400"
+            />
+        </section>
+
+        <!-- Use an empty alt="" so screen readers skip over it completely -->
+        <img src="https://placeholder.com" alt="" width="600" height="10">
+        
+        <!-- Notice the broken 'src' path below: the browser will render the alt text instead -->
+        <section class="fallback-box">
+            <h2>Broken Image Fallback Demo</h2>
+            <p>Because the image file below does not exist, you see the alt text instead:</p>
+            <img 
+                src="non-existent-team-photo.jpg" 
+                alt="The engineering team standing together outside the Surat office">
+        </section>
+    </main>
+  </body>
+</html>
