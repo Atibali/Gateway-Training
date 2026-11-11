@@ -66,7 +66,7 @@ console.log(counter2());
 console.log(counter2());
 console.log(counter2());
 
-// Classic Cloure Example
+// Classic Closure Example
 function createBankAccount(intialBalance){
     let balance=intialBalance;
     return {
