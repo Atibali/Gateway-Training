@@ -1,0 +1,48 @@
+<html>
+<body>
+
+    <h2>JavaScript Event Listeners</h2>
+
+    <input type="text" id="name-input" placeholder="Enter your name">
+
+    <button id="save-btn">Save</button>
+
+    <p id="output"></p>
+
+    <script>
+        const button = document.querySelector('#save-btn');
+        const input = document.querySelector('#name-input');
+        const output = document.querySelector('#output');
+
+        // Basic click event
+        button.addEventListener('click', (event) => {
+            console.log('Clicked!', event.target);
+
+            output.textContent = 'Hello, ' + input.value;
+        });
+
+        // Input event
+        input.addEventListener('input', (e) => {
+            console.log('Current value:', e.target.value);
+        });
+
+        // Keyboard event
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                console.log('Escape pressed');
+            }
+        });
+
+        // Removing an event listener
+        function handleClick() {
+            console.log('one-time-ish');
+        }
+
+        button.addEventListener('click', handleClick);
+
+        // Remove the listener
+        button.removeEventListener('click', handleClick);
+    </script>
+
+</body>
+</html>

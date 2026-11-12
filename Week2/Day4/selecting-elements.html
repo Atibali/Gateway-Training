@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Selectors Demo</title>
+</head>
+<body>
+
+    <h1 id="main-title">DOM Selectors</h1>
+
+    <p class="intro">First paragraph</p>
+    <p class="intro">Second paragraph</p>
+
+    <ul>
+        <li class="list-item">Java</li>
+        <li class="list-item">Python</li>
+        <li class="list-item">JavaScript</li>
+    </ul>
+
+    <button class="btn">Submit</button>
+    <button class="btn">Cancel</button>
+
+    <script>
+        // Single Element Selectors
+        const heading = document.getElementById('main-title');
+        const firstPara = document.querySelector('.intro');
+
+        console.log(heading.textContent);
+        console.log(firstPara.textContent);
+
+        // Multiple Element Selectors
+        const allItems = document.querySelectorAll('.list-item');
+        const buttons = document.getElementsByClassName('btn');
+
+        // Loop through selected elements
+        allItems.forEach(item => console.log(item.textContent));
+
+        // Convert NodeList into Array
+        const itemsArray = Array.from(allItems);
+
+        console.log("Array:", itemsArray);
+        console.log("Buttons:", buttons);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            .card {
+                padding: 15px;
+                background-color: lightblue;
+                margin: 10px 0;
+            }
+            .active {
+                border: 2px solid green;
+            }
+            .hidden {
+                display: none;
+            }
+            .dark-mode {
+                background-color: #333;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Dom Manipulation</h2>
+        <div class="card">Original Card contet</div>
+        <a href="#">Visit Website</a>
+        <ul id="todo-list">
+            <li>Learn JS</li>
+            <li>Lean TypeScript</li>
+        </ul>
+
+        <script>
+            const card=document.querySelector('.card');
+
+            card.textContent='Plain text only';
+            card.innerHTML='<strong>Bold Text</strong>';
+
+            const link=document.querySelector('a');
+
+            link.setAttribute('href','https://example.con');
+            console.log(link.getAttribute('href'));
+
+            card.classList.add('Active');
+            card.classList.remove('hidden');
+            card.classList.toggle('dark-mode');
+
+            console.log(card.classList.contains('active'));
+
+            card.style.backgroundColor='#f0f0f0';
+
+            const newItem=document.createElement('li');
+            newItem.textContent='HTML';
+
+            document.querySelector('#todo-list').append(newItem)
+        </script>
+    </body>
+</html>
