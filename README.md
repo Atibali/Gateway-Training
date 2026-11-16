@@ -17,3 +17,10 @@
 | [Day 2](Week2/Day2/) | [Day 2 README](Week2/Day2/README.md) · HTML structure, forms, CSS layouts, responsive design, and accessibility |
 | [Day 3](Week2/Day3/) | [Day 3 README](Week2/Day3/README.md) · JavaScript fundamentals, closures, callbacks, promises, and fetch |
 | [Day 4](Week2/Day4/) | [Day 4 README](Week2/Day4/README.md) · TypeScript fundamentals, DOM interaction, and Playwright tests |
+| [Day 5](Week2/Day5/) | [Day 5 README](Week2/Day5/README.md) · QA project and test management, Chrome DevTools, bug reporting, and testing techniques |
+
+## [Week 3](Week3/)
+
+| Day | Tasks and code |
+|---|---|
+| [Day 1](Week3/Day1/) | [Day 1 README](Week3/Day1/README.md) · C# LINQ, async programming, generics, delegates, and Node.js/Express TypeScript examples |
