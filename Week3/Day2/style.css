@@ -1,0 +1,101 @@
+#header {
+	background-color: lightgrey;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+h1,h2,p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card p {
+    color: gray
+}
+
+p {
+    color: red;
+}
+.description {
+    color: blue;
+}
+#header p {
+    color: green;
+}
+
+.card {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 15px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: red;
+}
+p {
+    color: #0000ff;
+}
+
+.card {
+    background-color: rgb(255, 200, 100);
+}
+button {
+    background-color: rgba(0,0,255,0.5);
+}
+
+.container {
+    width: 80%;
+    padding: 20px;
+    margin: 2rem;
+}
+h1 {
+    font-size: 2rem;
+}
+
+.card {
+    width: 300px;
+}
+
+/* Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Grid */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+/* For mobile screens */
+@media (max-width: 600px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
