@@ -25,4 +25,4 @@
 |---|---|
 | [Day 1](Week3/Day1/) | [Day 1 README](Week3/Day1/README.md) · C# LINQ, async programming, generics, delegates, and Node.js/Express TypeScript examples |
 | [Day 2](Week3/Day2/) | [Day 2 README](Week3/Day2/README.md) · CSS layout practice, responsive design, and ASP.NET Core API examples |
-| [Day 3](Week3/Day3/) | [Angular Shop Client](Week3/Day3/shop-client/) · Angular forms, routing, Material, and .NET Products API integration |
+| [Day 3](Week3/Day3/) | [Day 3 README](Week3/Day3/README.md) · Angular Shop Client and ASP.NET Core JWT authentication |

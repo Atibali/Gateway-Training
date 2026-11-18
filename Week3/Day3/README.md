@@ -1,4 +1,28 @@
-# Week 3, Day 3: Auth API Practice
+# Week 3 · Day 3
+
+## Angular Shop Client
+
+The `shop-client/` project is an Angular product catalog that consumes the ASP.NET Core Products API from `Week3/Day2/ProductsApi`.
+
+- Uses components and templates for product lists, details, and create/edit forms.
+- Uses reactive forms and validation for product input.
+- Uses Angular routing and route parameters for product detail and edit views.
+- Uses `HttpClient`, a dependency-injected product service, and an HTTP interceptor.
+- Uses Angular Material for form fields, cards, buttons, and loading indicators.
+
+Run the client from the repository root:
+
+```powershell
+cd .\Week3\Day3\shop-client
+npm install
+npm start
+```
+
+Open `http://localhost:4200`. The client connects to the Products API at `http://localhost:5024`.
+
+See [shop-client/README.md](shop-client/README.md) for project structure and Angular CLI commands.
+
+## Auth API Practice
 
 This practice project is an ASP.NET Core API with ASP.NET Core Identity, SQLite, JWT authentication, and role-based authorization.
 
