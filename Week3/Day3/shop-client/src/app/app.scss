@@ -1,4 +1,50 @@
 main {
-  min-height: 100vh;
-  background: #f7f8fa;
+  min-height: calc(100vh - 72px);
+  padding: 2rem 1rem 4rem;
+  background: #f4f6fb;
+}
+
+.site-header {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0 clamp(1rem, 5vw, 4rem);
+  color: #fff;
+  background: #172554;
+}
+
+.brand {
+  color: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+nav a {
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.5rem;
+  color: #dbeafe;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  color: #fff;
+  background: #293d73;
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-block: 1rem;
+  }
 }

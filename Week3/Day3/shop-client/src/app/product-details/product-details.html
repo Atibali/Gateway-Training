@@ -1,0 +1,39 @@
+<section class="details-page" aria-labelledby="details-heading">
+  <a class="back-link" routerLink="/">← Back to products</a>
+
+  @if (loading()) {
+    <div class="loading" role="status" aria-label="Loading product">
+      <mat-spinner diameter="40"></mat-spinner>
+    </div>
+  } @else if (errorMessage()) {
+    <p class="error-message" role="alert">{{ errorMessage() }}</p>
+  } @else if (product(); as product) {
+    <mat-card>
+      <mat-card-content>
+        <p class="eyebrow">Product details</p>
+        <h1 id="details-heading">{{ product.name }}</h1>
+        <p class="description">{{ product.description || 'No description provided.' }}</p>
+        <dl>
+          <div>
+            <dt>Price</dt>
+            <dd>{{ product.price | currency }}</dd>
+          </div>
+          <div>
+            <dt>Quantity in stock</dt>
+            <dd>{{ product.quantity }}</dd>
+          </div>
+          <div>
+            <dt>Product ID</dt>
+            <dd>{{ product.id }}</dd>
+          </div>
+        </dl>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <a mat-button routerLink="/">Back to list</a>
+        <a mat-flat-button color="primary" [routerLink]="['/products', product.id, 'edit']">
+          Edit product
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  }
+</section>

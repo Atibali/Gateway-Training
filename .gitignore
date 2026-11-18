@@ -4,6 +4,8 @@ obj/
 node_modules/
 package.json
 package-lock.json
+!Week3/Day3/shop-client/package.json
+!Week3/Day3/shop-client/package-lock.json
 tsconfig.json
 dist/
 tmp/

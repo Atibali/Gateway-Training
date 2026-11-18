@@ -1,3 +1,13 @@
+<header class="site-header">
+  <a class="brand" routerLink="/" aria-label="Shop home">Shop Training</a>
+  <nav aria-label="Main navigation">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+      >Products</a
+    >
+    <a routerLink="/products/new" routerLinkActive="active">Add product</a>
+  </nav>
+</header>
+
 <main>
-  <app-product-list></app-product-list>
+  <router-outlet></router-outlet>
 </main>

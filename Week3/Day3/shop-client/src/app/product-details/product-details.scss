@@ -1,0 +1,68 @@
+.details-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #40588d;
+  text-decoration: none;
+}
+
+.eyebrow {
+  margin-bottom: 0.35rem;
+  color: #52648e;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.description {
+  margin-top: 0.75rem;
+  color: #61708c;
+  line-height: 1.6;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+}
+
+dl div {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #f4f6fb;
+}
+
+dt {
+  color: #61708c;
+  font-size: 0.85rem;
+}
+
+dd {
+  margin: 0.35rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.loading {
+  display: grid;
+  min-height: 12rem;
+  place-items: center;
+}
+
+.error-message {
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  color: #8c2525;
+  background: #ffebeb;
+}

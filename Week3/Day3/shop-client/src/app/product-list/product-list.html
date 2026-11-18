@@ -1,3 +1,52 @@
 <section class="product-list" aria-labelledby="product-list-heading">
-  <h1 id="product-list-heading">Products</h1>
+  <div class="page-heading">
+    <div>
+      <p class="eyebrow">Inventory</p>
+      <h1 id="product-list-heading">Products</h1>
+      <p class="intro">Browse and manage the products in your catalog.</p>
+    </div>
+    <a mat-flat-button color="primary" routerLink="/products/new">Add product</a>
+  </div>
+
+  @if (errorMessage()) {
+    <p class="error-message" role="alert">{{ errorMessage() }}</p>
+  }
+
+  @if (loading()) {
+    <div class="loading" role="status" aria-label="Loading products">
+      <mat-spinner diameter="40"></mat-spinner>
+    </div>
+  } @else if (products().length === 0) {
+    <mat-card class="empty-state">
+      <mat-card-content>
+        <h2>No products yet</h2>
+        <p>Add your first product to start building the catalog.</p>
+        <a mat-stroked-button routerLink="/products/new">Create a product</a>
+      </mat-card-content>
+    </mat-card>
+  } @else {
+    <div class="product-grid">
+      @for (product of products(); track product.id) {
+        <mat-card class="product-card">
+          <mat-card-content>
+            <div class="product-heading">
+              <h2>{{ product.name }}</h2>
+              <span class="stock" [class.low-stock]="product.quantity < 5">
+                {{ product.quantity }} in stock
+              </span>
+            </div>
+            <p class="description">{{ product.description || 'No description provided.' }}</p>
+            <p class="price">{{ product.price | currency }}</p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <a mat-button [routerLink]="['/products', product.id]">Details</a>
+            <a mat-button [routerLink]="['/products', product.id, 'edit']">Edit</a>
+            <button mat-button color="warn" type="button" (click)="deleteProduct(product)">
+              Delete
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      }
+    </div>
+  }
 </section>
