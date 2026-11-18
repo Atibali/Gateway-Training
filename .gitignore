@@ -5,6 +5,15 @@ node_modules/
 package.json
 package-lock.json
 tsconfig.json
+dist/
+tmp/
+out-tsc/
+bazel-out/
+**/.angular/cache/
+coverage/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
 
 # Playwright
 /test-results/
@@ -12,3 +21,27 @@ tsconfig.json
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# IDE and generated files (applies to Angular projects anywhere in the repo)
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+**/.vscode/*
+!**/.vscode/settings.json
+!**/.vscode/tasks.json
+!**/.vscode/launch.json
+!**/.vscode/extensions.json
+!**/.vscode/mcp.json
+**/.history/*
+.sass-cache/
+connect.lock
+libpeerconnection.log
+testem.log
+typings/
+__screenshots__/
+.DS_Store
+Thumbs.db
