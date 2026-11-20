@@ -3,11 +3,13 @@ import StudentCard from "./components/Greeting";
 import Product from "./components/Product";
 import CounterButton, { CounterDisplay } from "./components/CounterButton";
 import Counter from "./components/Counter";
+import BrowserCounter from "./components/BrowserTitle";
+import Timer from "./components/Timer";
 const name="Charusat University"
 const year=2026;
 function App(){
   const [count, setCount] = useState(0);
-
+  const students = ["Max", "Sara", "Alex"];
   return (
     <div>
       <div>
@@ -31,6 +33,17 @@ function App(){
           onIncrement={() => setCount((currentCount) => currentCount + 1)}
         />
       </section>
+      <h3>useEffect</h3>
+      <BrowserCounter/>
+      <Timer/>
+      <div>
+        <ul>
+          {students.map(student=> (
+            <li key={student}>{student}</li>
+          ))}
+        </ul>
+      </div>
+      
     </div>
   );
 }
