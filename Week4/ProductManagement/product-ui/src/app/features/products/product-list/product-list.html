@@ -1,0 +1,43 @@
+<div class="container">
+
+  <h1>Product Management</h1>
+
+  @if (isLoading()) {
+    <p>Loading products...</p>
+  }
+
+  @if (errorMessage()) {
+    <p class="error">{{ errorMessage() }}</p>
+  }
+
+  @if (!isLoading() && !errorMessage()) {
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (product of products(); track product.id) {
+          <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price | currency:'INR' }}</td>
+            <td>{{ product.stock }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+    @if (products().length === 0) {
+      <p>No products available.</p>
+    }
+
+  }
+
+</div>
