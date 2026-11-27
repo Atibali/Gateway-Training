@@ -19,8 +19,26 @@ public class ProductService
         return _repository.Add(product);
     }
 
+    public IReadOnlyList<Product> GetProducts()
+    {
+        return _repository.GetAll();
+    }
+
     public Product? GetProduct(int id)
     {
         return _repository.GetById(id);
+    }
+
+    public Product? UpdateProduct(int id, Product product)
+    {
+        if (product.Price <= 0)
+            throw new ArgumentException("Price must be greater than zero.");
+
+        return _repository.Update(id, product);
+    }
+
+    public bool DeleteProduct(int id)
+    {
+        return _repository.Delete(id);
     }
 }

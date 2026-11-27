@@ -2,6 +2,7 @@ using Xunit;
 
 namespace ProductApi.Tests;
 
+[Trait("Shard", "2")]
 public class ProductTests
 {
     [Fact]

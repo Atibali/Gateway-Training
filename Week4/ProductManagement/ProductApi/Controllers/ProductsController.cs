@@ -1,49 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using ProductApi.Models;
+using ProductApi.Services;
 
 namespace ProductApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ProductsController : ControllerBase
 {
-    private static List<Product> products = new()
+    private readonly ProductService _service;
+
+    public ProductsController(ProductService service)
     {
-        new Product
-        {
-            Id = 1,
-            Name = "Laptop",
-            Price = 55000,
-            Stock = 10
-        },
-        new Product
-        {
-            Id = 2,
-            Name = "Mouse",
-            Price = 800,
-            Stock = 25
-        },
-        new Product
-        {
-            Id = 3,
-            Name = "Keyboard",
-            Price = 1500,
-            Stock = 15
-        }
-    };
+        _service = service;
+    }
 
     // GET: api/products
+    [Authorize(Roles = "ProductReader,ProductWriter")]
     [HttpGet]
     public ActionResult<List<Product>> GetProducts()
     {
-        return Ok(products);
+        return Ok(_service.GetProducts());
     }
 
     // GET: api/products/1
+    [Authorize(Roles = "ProductReader,ProductWriter")]
     [HttpGet("{id}")]
     public ActionResult<Product> GetProduct(int id)
     {
-        var product = products.FirstOrDefault(p => p.Id == id);
+        var product = _service.GetProduct(id);
 
         if (product == null)
         {
@@ -54,17 +41,42 @@ public class ProductsController : ControllerBase
     }
 
     // POST: api/products
+    [Authorize(Roles = "ProductWriter")]
     [HttpPost]
     public ActionResult<Product> CreateProduct(Product product)
     {
-        product.Id = products.Max(p => p.Id) + 1;
+        try
+        {
+            var created = _service.AddProduct(product);
+            return CreatedAtAction(nameof(GetProduct), new { id = created.Id }, created);
+        }
+        catch (DuplicateProductNameException)
+        {
+            return Conflict();
+        }
+    }
 
-        products.Add(product);
+    // PUT: api/products/1
+    [Authorize(Roles = "ProductWriter")]
+    [HttpPut("{id}")]
+    public ActionResult<Product> UpdateProduct(int id, Product product)
+    {
+        try
+        {
+            var updated = _service.UpdateProduct(id, product);
+            return updated is null ? NotFound() : Ok(updated);
+        }
+        catch (DuplicateProductNameException)
+        {
+            return Conflict();
+        }
+    }
 
-        return CreatedAtAction(
-            nameof(GetProduct),
-            new { id = product.Id },
-            product
-        );
+    // DELETE: api/products/1
+    [Authorize(Roles = "ProductWriter")]
+    [HttpDelete("{id}")]
+    public IActionResult DeleteProduct(int id)
+    {
+        return _service.DeleteProduct(id) ? NoContent() : NotFound();
     }
 }

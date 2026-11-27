@@ -5,6 +5,7 @@ using ProductApi.Services;
 
 namespace ProductApi.Tests;
 
+[Trait("Shard", "2")]
 public class ProductServiceTests
 {
     [Fact]
