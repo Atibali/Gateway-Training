@@ -6,6 +6,10 @@ package.json
 package-lock.json
 !Week3/Day3/shop-client/package.json
 !Week3/Day3/shop-client/package-lock.json
+!Week4/StudentManagement/backend/package.json
+!Week4/StudentManagement/backend/package-lock.json
+!Week4/StudentManagement/frontend/package.json
+!Week4/StudentManagement/frontend/package-lock.json
 tsconfig.json
 dist/
 tmp/

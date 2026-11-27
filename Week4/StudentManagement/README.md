@@ -66,6 +66,10 @@ Students can view the student list. Admins and teachers can add students, and on
 cd frontend
 npm run build
 npm run lint
+npm run test:coverage
 cd ..\backend
 npm run build
+npm run test:coverage
 ```
+
+The backend tests use Supertest to check Express responses without connecting to MongoDB. The frontend tests use React Testing Library and a mocked async login request. Both packages use Vitest; coverage output is printed in the terminal and saved as an HTML report under `coverage/`.
