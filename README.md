@@ -28,3 +28,13 @@
 | [Day 3](Week3/Day3/) | [Day 3 README](Week3/Day3/README.md) · Angular Shop Client and ASP.NET Core JWT authentication |
 | [Day 4](Week3/Day4/) | [Day 4 README](Week3/Day4/README.md) · Ticket API with MongoDB and Playwright API tests |
 | [Day 5](Week3/Day5/) | [React app](Week3/Day5/my-app/) · React components, hooks, routing, API data fetching, and form validation |
+
+## [Week 4](Week4/)
+
+| Day | Tasks and code |
+|---|---|
+| Day 1 - November 23 | Product management API, Angular UI, tests, and CI work |
+| Day 2 - November 24 | Product API and Angular UI development |
+| Day 3 - November 25 | Product API testing and coverage |
+| Day 4 - November 26 | Student management frontend and backend development |
+| Day 5 - November 27 | Authentication, role-based access, and application testing |
